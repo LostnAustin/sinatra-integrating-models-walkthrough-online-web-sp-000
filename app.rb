@@ -9,6 +9,10 @@ class App < Sinatra::Base
   post '/' do
     @analyzed_text = TextAnalyzer.new(params[:user_text])
     @count_of_words = @analyzed_text.count_of_words
+    @count_of_vowels = @analyzed_text.count_of_vowels
+    @count_of_consonants = @analyzed_text.count_of_consonants
+    @most_used_letter = @analyzed_text.most_used_letter
+    @most_used_letter_count = @analyzed_text.most_used_letter.count
 binding.pry
     erb :results
   end
